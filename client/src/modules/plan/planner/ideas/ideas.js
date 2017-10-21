@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-
+import IdeaComponent from './single-idea/idea';
 // imports for this component
 import template from './ideas.html';
 
@@ -21,9 +21,8 @@ const IdeasComponent = {
 };
 
 const IdeasModule = angular.module('app.plan.planner.ideas', [])
-  .component('ideas', IdeasComponent);
-
-
+  .component('ideas', IdeasComponent)
+  .component('idea', IdeaComponent);
 
 
 export default IdeasModule.name;
