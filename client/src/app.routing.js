@@ -47,11 +47,21 @@ const routing = function ($stateProvider, $urlRouterProvider, $locationProvider)
     }
   };
 
+  const feedState = {
+    name: 'app.plan.feed',
+    url: '/feed',
+    component: 'feed',
+    resolve: {
+      protect: redirectIfNotAuthed
+    }
+  };
+
   $stateProvider.state(loginState);
   $stateProvider.state(signupState);
   $stateProvider.state(appState);
   $stateProvider.state(homeState);
   $stateProvider.state(planState);
+  $stateProvider.state(feedState);
 };
 
 routing.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];

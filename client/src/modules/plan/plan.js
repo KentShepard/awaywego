@@ -1,6 +1,7 @@
 import angular from 'angular';
 
 import PlanNavComponent from './plan-nav/plan-nav';
+import PlanFeedComponent from './plan-feed/plan-feed';
 // imports for this component
 import template from './plan.html';
 
@@ -20,7 +21,8 @@ const PlanComponent = {
 
 const PlanModule = angular.module('app.plan', [])
   .component('plan', PlanComponent)
-  .component('planNav', PlanNavComponent);
+  .component('planNav', PlanNavComponent)
+  .component('planFeed', PlanFeedComponent);
 
 
 export default PlanModule.name;
