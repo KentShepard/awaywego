@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-
+import EventComponent from './single-event/event';
 // imports for this component
 import template from './itinerary.html';
 
@@ -21,9 +21,8 @@ const ItineraryComponent = {
 };
 
 const ItineraryModule = angular.module('app.plan.planner.itinerary', [])
-  .component('itinerary', ItineraryComponent);
-
-
+  .component('itinerary', ItineraryComponent)
+  .component('event', EventComponent);
 
 
 export default ItineraryModule.name;
