@@ -72,3 +72,13 @@
 
 .edit-button {
 }
+
+/*Edit Mode CSS*/
+.edit-mode-button-container {
+  width: 100%;
+  display: flex;
+}
+
+.edit-mode-button {
+  flex: 1;
+}

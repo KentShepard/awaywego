@@ -1,4 +1,4 @@
-<div class="idea-page-container">
+<div class="idea-page-container" ng-if="!$ctrl.editMode">
   <div class="idea-container">
     <div class="idea-image">
       <div class="back-arrow-button btn btn-secondary" ui-sref="app.plan.planner.ideas"><i class="material-icons">keyboard_arrow_left</i></div>
@@ -19,8 +19,39 @@
     </div>
   </div>
   <div class="edit-button-container">
-    <button class="edit-button awgd-button" ng-click="$ctrl.invite($ctrl.user.name)">
+    <button class="edit-button awgd-button" ng-click="$ctrl.editMode = true">
       <span>Edit Details</span>
+    </button>
+  </div>
+</div>
+
+<!-- EDIT MODE -->
+<div class="idea-page-container" ng-if="$ctrl.editMode">
+  <div class="idea-container">
+    <div class="idea-image">
+      <div class="back-arrow-button btn btn-secondary" ui-sref="app.plan.planner.ideas"><i class="material-icons">keyboard_arrow_left</i></div>
+      <button class="btn btn-secondary" ui-sref="app.plan.planner.promoteIdea({eventId: $ctrl.idea._id})">Schedule</button>
+      <img ng-src={{$ctrl.idea.imageUrl}} alt="" />
+    </div>
+    <div class="details-container">
+      <h2 class="idea-title">{{$ctrl.idea.title}}</h2>
+      <p>{{$ctrl.idea.description}}</p>
+    </div>
+    <div class="icons-container">
+      <div class="voting-container">
+        <div ng-click="$ctrl.upVote()"><i class="material-icons">thumb_up</i></div>
+        <div class="overall-vote">{{$ctrl.totalVotes}}</div>
+        <div ng-click="$ctrl.downVote()"><i class="material-icons">thumb_down</i></div>
+      </div>
+      <div ng-click="$ctrl.click()"><i class="comment-icon material-icons">comment</i></div>
+    </div>
+  </div>
+  <div class="edit-mode-button-container">
+    <button class="edit-mode-button awgl-button" ng-click="$ctrl.editMode = false">
+      <span>Cancel</span>
+    </button>
+    <button class="edit-mode-button awgd-button" ng-click="$ctrl.editMode = false">
+      <span>Submit</span>
     </button>
   </div>
 </div>

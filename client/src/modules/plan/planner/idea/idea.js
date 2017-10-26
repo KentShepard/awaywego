@@ -14,6 +14,7 @@ class IdeaController {
     this.totalVotes = 0;
     this.upVote = this.upVote.bind(this);
     this.downVote = this.downVote.bind(this);
+    this.editMode = true;
   }
 
   promoteEvent(ideaId) {
