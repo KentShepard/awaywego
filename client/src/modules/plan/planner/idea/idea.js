@@ -54,7 +54,6 @@ class IdeaController {
   enterEditMode(currentIdea) {
     this.editMode = true;
     this.currentIdea = currentIdea;
-    console.log(this.currentIdea);
   }
 
   submitEdit() {
