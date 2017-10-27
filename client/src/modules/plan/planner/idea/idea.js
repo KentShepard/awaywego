@@ -11,10 +11,11 @@ class IdeaController {
     this.EventService = EventService;
     this.ideaId = $stateParams.ideaId;
     this.idea = EventService.getEvent(this.ideaId);
+    this.ideaCopy = Object.assign({}, this.idea);
     this.totalVotes = 0;
     this.upVote = this.upVote.bind(this);
     this.downVote = this.downVote.bind(this);
-    this.editMode = true;
+    this.editMode = false;
   }
 
   promoteEvent(ideaId) {
@@ -50,9 +51,20 @@ class IdeaController {
     });
   }
 
-  change() {
-    console.log('changing');
-    console.log(this.idea);
+  enterEditMode(currentIdea) {
+    this.editMode = true;
+    this.currentIdea = currentIdea;
+    console.log(this.currentIdea);
+  }
+
+  submitEdit() {
+    this.EventService.updateEvent(this.ideaId, this.idea);
+    this.editMode = false;
+  }
+
+  cancelEdit() {
+    this.idea = Object.assign({}, this.ideaCopy);
+    this.editMode = false;
   }
 }
 IdeaController.$inject = ['EventService', '$stateParams'];

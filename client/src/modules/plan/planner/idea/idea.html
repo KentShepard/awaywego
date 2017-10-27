@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="edit-button-container">
-    <button class="edit-button awgd-button" ng-click="$ctrl.editMode = true">
+    <button class="edit-button awgd-button" ng-click="$ctrl.enterEditMode($ctrl.idea)">
       <span>Edit Details</span>
     </button>
   </div>
@@ -32,15 +32,15 @@
       <img ng-src={{$ctrl.idea.imageUrl}} alt="" />
     </div>
     <div class="details-container">
-      <textarea type="text" class="edit-title-input form-control" ng-model="$ctrl.idea.title"></textarea>
-      <textarea type="text" align="top" class="edit-description-input form-control" ng-model="$ctrl.idea.description"></textarea>
+      <textarea class="edit-title-input form-control" ng-model="$ctrl.idea.title"></textarea>
+      <textarea class="edit-description-input form-control" ng-model="$ctrl.idea.description"></textarea>
     </div>
   </div>
   <div class="edit-mode-button-container">
-    <button class="edit-mode-button awgl-button" ng-click="$ctrl.editMode = false">
+    <button class="edit-mode-button awgl-button" ng-click="$ctrl.cancelEdit()">
       <span>Cancel</span>
     </button>
-    <button class="edit-mode-button awgd-button" ng-click="$ctrl.editMode = false">
+    <button class="edit-mode-button awgd-button" ng-click="$ctrl.submitEdit()">
       <span>Submit Changes</span>
     </button>
   </div>
