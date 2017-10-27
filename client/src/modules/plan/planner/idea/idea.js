@@ -49,6 +49,11 @@ class IdeaController {
       this.totalVotes = this.sumVotes();
     });
   }
+
+  change() {
+    console.log('changing');
+    console.log(this.idea);
+  }
 }
 IdeaController.$inject = ['EventService', '$stateParams'];
 
