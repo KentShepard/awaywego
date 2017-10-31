@@ -32,6 +32,9 @@
         <textarea class="awgl-form-input form-control" name="idea-desc" ng-model="$ctrl.event.description"
           type="text" rows=2></textarea>
       </div>
+      <div ng-click="$ctrl.findLocation()" class="awgd-button" name="promote-idea-submit">Address</div>
+      <div id="address">
+      </div>
       <div ng-if="$ctrl.formWarning" class="awgl-form-warning flex flex-center">
         <span>{{$ctrl.formWarning}}</span>
       </div>
