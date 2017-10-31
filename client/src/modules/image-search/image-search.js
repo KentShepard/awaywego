@@ -23,7 +23,7 @@ class ImageSearchController {
 
   imageClick(e) {
     this.imageUrl = e.target.currentSrc;
-    $('.make-plan-images img').removeClass('highlight');
+    $('.search-images img').removeClass('highlight');
     $(e.target).addClass('highlight');
   }
 }

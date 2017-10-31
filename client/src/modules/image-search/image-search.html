@@ -3,7 +3,8 @@
   <div class="search-image-container">
     <input class="awgl-form-input form-control" name="plan-image"
       type="text" placeholder="Image search" ng-model="$ctrl.search"/>
-      <div class="search-button awgd-button" name="image-search" ng-click="$ctrl.imageSearch($ctrl.search)">Search</div>
+      <button type="button" class="search-button awgd-button" ng-if="$ctrl.search.length" name="image-search" ng-click="$ctrl.imageSearch($ctrl.search)">Search</button>
+      <button disabled="true" class="search-button awgd-button" ng-if="$ctrl.search.length === 0" name="image-search" ng-click="$ctrl.imageSearch($ctrl.search)">Search</button>
   </div>
 </div>
 <div class="loading-spinner" ng-if="$ctrl.spinner">
