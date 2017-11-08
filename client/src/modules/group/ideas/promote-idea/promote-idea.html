@@ -1,38 +1,35 @@
-<div class="promote-idea-container awg-flex-col awg-flex-start awg-flex-align-stretch">
-  <div class="promote-idea-header"><span>Let's schedule this</span></div>
+<div class="promote-idea-container flex-window awg-flex-col awg-flex-start awg-flex-align-stretch overflow">
   <div class="promote-idea-form-container">
     <form name="newIdea" ng-submit="$ctrl.submit()">
       <div class="promote-idea-input-block">
-        <label for="idea-title">Title</label>
-        <input class="awgl-form-input form-control" name="idea-title" ng-model="$ctrl.event.title"
-          type="text" placeholder="Idea name" />
-      </div>
-      <div class="promote-idea-input-block">
-        <label for="idea-title">Location</label>
+        <label class="sr-only" for="idea-title">Location</label>
         <address-search address-name="$ctrl.addressName" address-text="$ctrl.addressText" address-link="$ctrl.addressLink"></address-search>
       </div>
       <div class="date-time-pickers">
-        <label for="idea-start-time">Start:</label>
+        <label class="sr-only" for="idea-end-time">Start date and time</label>
         <div class="date-time">
-          <mdp-date-picker class="picker" mdp-placeholder="Date" mdp-format="MM/DD/YYYY" ng-model="$ctrl.startTime" ng-change="$ctrl.onStartDateChange()"></mdp-date-picker>
-          <mdp-time-picker class="picker" mdp-placeholder="Time" mdp-format="hh:mm A" ng-model="$ctrl.startTime" ng-change="$ctrl.onStartTimeChange()"></mdp-time-picker>
+          <mdp-date-picker class="picker" mdp-placeholder="Start date"
+          mdp-format="MM/DD/YYYY" ng-model="$ctrl.startTime"
+          ng-change="$ctrl.onStartDateTimeChange()"
+          mdp-open-on-click="true"></mdp-date-picker>
+          <mdp-time-picker class="picker" mdp-placeholder="Start time"
+          mdp-format="hh:mm A" ng-model="$ctrl.startTime"
+          ng-change="$ctrl.onStartDateTimeChange()"
+          mdp-open-on-click="true"></mdp-time-picker>
         </div>
       </div>
       <div class="date-time-pickers">
-        <label for="idea-end-time">End:</label>
+        <label class="sr-only" for="idea-end-time">End date and time</label>
         <div class="date-time">
-          <mdp-date-picker class="picker" mdp-placeholder="Date" mdp-format="MM/DD/YYYY" ng-model="$ctrl.endTime" ng-change="$ctrl.onEndDateTimeChange()"></mdp-date-picker>
-          <mdp-time-picker class="picker" mdp-placeholder="Time" mdp-format="hh:mm A" ng-model="$ctrl.endTime" ng-change="$ctrl.onEndDateTimeChange()"></mdp-time-picker>
+          <mdp-date-picker class="picker" mdp-placeholder="End date"
+          mdp-format="MM/DD/YYYY" ng-model="$ctrl.endTime"
+          ng-change="$ctrl.onEndDateTimeChange()"
+          mdp-open-on-click="true"></mdp-date-picker>
+          <mdp-time-picker class="picker" mdp-placeholder="End time"
+          mdp-format="hh:mm A" ng-model="$ctrl.endTime"
+          ng-change="$ctrl.onEndDateTimeChange()"
+          mdp-open-on-click="true"></mdp-time-picker>
         </div>
-      </div>
-      <div class="promote-idea-input-block">
-        <label for="description">Description</label>
-        <textarea class="awgl-form-input form-control" name="idea-desc" ng-model="$ctrl.event.description"
-          type="text" rows=2></textarea>
-      </div>
-      <div class="promote-idea-input-block" ng-if="$ctrl.stateParams.eventId === 'new'">
-        <label for="plan-image">Last, how about a background picture?</label>
-        <image-search image-url="$ctrl.event.imageUrl"></image-search>
       </div>
       <div ng-if="$ctrl.formWarning" class="awgl-form-warning awg-flex awg-flex-center">
         <span>{{$ctrl.formWarning}}</span>

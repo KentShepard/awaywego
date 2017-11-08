@@ -1,46 +1,5 @@
-.promote-idea-container {
-  height: 100%;
-  padding: 20px 50px;
-  background: linear-gradient(white, var(--m1));
-  overflow: scroll;
-}
-
-.promote-idea-header {
-  margin: 10px 0 20px 0;
-  text-align: center;
-}
-
-.promote-idea-header span {
-  font-size: 1.7em;
-  color: var(--dk4);
-}
-
 .promote-idea-input-block {
-  margin-bottom: 20px;
-}
-
-.promote-idea-input-block label,
-.date-time-pickers label {
-  color: var(--dk3);
-  font-size: 1.1em;
-}
-
-.promote-idea-input-block div {
-  margin-top: 0;
-  margin-bottom: .25rem;
-}
-
-.promote-idea-input {
-  width: 100%;
-}
-
-.promote-idea-submit-button-container {
-  width: 100%;
-}
-
-label {
-  margin-top: 10px;
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .date-time {
@@ -51,4 +10,25 @@ label {
   flex-basis: 50%;
   display: flex;
   justify-content: center;
+}
+
+.promote-idea-submit-button-container {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* overriding some ng-material and md-pickers styles */
+.promote-idea-container md-input-container {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.promote-idea-container md-input-container .md-errors-spacer {
+  min-height: 10px;
+}
+.promote-idea-container md-input-container label {
+  margin-bottom: 0;
+}
+.promote-idea-container .md-button.md-icon-button {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
