@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   background-color: hsla(203, 30%, 80%, .5);
+  z-index: 50;
 }
 
 .promote-idea-container {

@@ -13,13 +13,12 @@ class PromoteIdeaController {
     this.UserService = UserService;
     this.stateParams = $stateParams;
     this.state = $state;
-    this.$onInit = this.$onInit.bind(this);
     this.formWarning = '';
     this.addressName = '';
     this.addressText = '';
     this.addressLink = '';
     this.startTime = new Date();
-    this.endTime = '';
+    this.endTime = null;
     this.milliseconds = '';
     this.endTimeChanged = false;
     this.endDateChanged = false;
@@ -28,17 +27,17 @@ class PromoteIdeaController {
     this.onEndDateTimeChange = this.onEndDateTimeChange.bind(this);
   }
 
-  $onInit() {
-    this.onStartTimeChange();
-    if (this.stateParams.eventId === 'new') {
-      this.event = {};
-      this.event.groupId = this.stateParams.groupId;
-      this.event.userId = this.UserService.user.id;
-      this.event.imageUrl = '';
-    } else {
-      this.event = this.EventService.getEvent(this.stateParams.eventId);
-    }
-  }
+  // $onInit() {
+  //   this.onStartTimeChange();
+  //   if (this.stateParams.eventId === 'new') {
+  //     this.event = {};
+  //     this.event.groupId = this.stateParams.groupId;
+  //     this.event.userId = this.UserService.user.id;
+  //     this.event.imageUrl = '';
+  //   } else {
+  //     this.event = this.EventService.getEvent(this.stateParams.eventId);
+  //   }
+  // }
 
   onStartDateChange() {
     if (!this.endDateChanged) {
@@ -61,7 +60,7 @@ class PromoteIdeaController {
 
   submit() {
     if (this.validateForm()) {
-      let promotedIdea = this.event;
+      let promotedIdea = this.EventService.events[this.eventId];
       promotedIdea.startTime = this.startTime;
       promotedIdea.endTime = this.endTime;
       promotedIdea.addressName = this.addressName;
@@ -85,18 +84,9 @@ class PromoteIdeaController {
     }
   }
 
-  //todo: add calendar limit for end time after start time.
-
   validateForm() {
-    if (!this.event.title) {
-      this.formWarning = 'Please enter a title';
-    }
     if (!this.startTime) {
       this.formWarning = 'Please enter a start time';
-      return false;
-    }
-    if (!this.endTime) {
-      this.formWarning = 'Please enter an end time';
       return false;
     }
     return true;

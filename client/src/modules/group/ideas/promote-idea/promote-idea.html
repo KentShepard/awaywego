@@ -11,11 +11,11 @@
         <div class="date-time-pickers">
           <label class="sr-only" for="idea-end-time">Start date and time</label>
           <div class="date-time">
-            <mdp-date-picker class="picker" mdp-placeholder="Start date"
+            <mdp-date-picker required class="picker" mdp-placeholder="Start date"
             mdp-format="MM/DD/YYYY" ng-model="$ctrl.startTime"
             ng-change="$ctrl.onStartDateTimeChange()"
             mdp-open-on-click="true"></mdp-date-picker>
-            <mdp-time-picker class="picker" mdp-placeholder="Start time"
+            <mdp-time-picker required class="picker" mdp-placeholder="Start time"
             mdp-format="hh:mm A" ng-model="$ctrl.startTime"
             ng-change="$ctrl.onStartDateTimeChange()"
             mdp-open-on-click="true"></mdp-time-picker>
@@ -39,7 +39,8 @@
         </div>
         <div class="promote-idea-submit-container awg-flex awg-flex-center">
           <div class="promote-idea-submit-button-container">
-            <button type="submit" class="awgl-button" name="promote-idea-submit">Schedule event</button>
+            <button ng-disabled="loginForm.$invalid" type="submit" class="awgl-button"
+              name="promote-idea-submit">Schedule event</button>
           </div>
         </div>
       </form>
