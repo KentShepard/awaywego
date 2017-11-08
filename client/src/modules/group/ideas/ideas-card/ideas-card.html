@@ -39,8 +39,10 @@
           <i class="material-icons">thumb_down</i>
         </div>
       </div>
-      <div class="ideas-card-actions awg-flex">
-        <a ui-sref="app.group.promoteIdea({eventId: $ctrl.EventService.events[$ctrl.eventId]._id})">Schedule</a>
+      <div class="ideas-card-actions awg-flex" ng-if="$ctrl.scheduleShouldAppear()">
+        <a href="#" ng-click="$ctrl.openSchedule()">Schedule</a>
+        <promote-idea ng-if="$ctrl.showSchedule" event-id="$ctrl.eventId"
+          close-schedule="$ctrl.closeSchedule"></promote-idea>
       </div>
     </div>
   </div>

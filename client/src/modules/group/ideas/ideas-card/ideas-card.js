@@ -11,13 +11,19 @@ class IdeasCardController {
     this.groupOwner = GroupService.currentGroup.userId;
     this.ConfirmService = ConfirmService;
 
+    this.showSchedule = false;
     this.busy = false;
 
+    this.openSchedule = this.openSchedule.bind(this);
+    this.closeSchedule = this.closeSchedule.bind(this);
     this.upVote = this.upVote.bind(this);
     this.downVote = this.downVote.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.menuShouldAppear = this.menuShouldAppear.bind(this);
   }
+
+  openSchedule() { this.showSchedule = true; }
+  closeSchedule() { this.showSchedule = false; }
 
   handleDelete() {
     this.ConfirmService.openModal(
@@ -34,6 +40,10 @@ class IdeasCardController {
   menuShouldAppear() {
     return this.EventService.events[this.eventId].userId === this.userId ||
            this.userId === this.groupOwner;
+  }
+
+  scheduleShouldAppear() {
+    return this.userId === this.groupOwner;
   }
 
   upVote() {

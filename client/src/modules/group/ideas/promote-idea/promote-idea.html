@@ -1,44 +1,48 @@
-<div class="promote-idea-container flex-window awg-flex-col awg-flex-start awg-flex-align-stretch overflow">
-  <div class="promote-idea-form-container">
-    <form name="newIdea" ng-submit="$ctrl.submit()">
-      <div class="promote-idea-input-block">
-        <label class="sr-only" for="idea-title">Location</label>
-        <address-search address-name="$ctrl.addressName" address-text="$ctrl.addressText" address-link="$ctrl.addressLink"></address-search>
-      </div>
-      <div class="date-time-pickers">
-        <label class="sr-only" for="idea-end-time">Start date and time</label>
-        <div class="date-time">
-          <mdp-date-picker class="picker" mdp-placeholder="Start date"
-          mdp-format="MM/DD/YYYY" ng-model="$ctrl.startTime"
-          ng-change="$ctrl.onStartDateTimeChange()"
-          mdp-open-on-click="true"></mdp-date-picker>
-          <mdp-time-picker class="picker" mdp-placeholder="Start time"
-          mdp-format="hh:mm A" ng-model="$ctrl.startTime"
-          ng-change="$ctrl.onStartDateTimeChange()"
-          mdp-open-on-click="true"></mdp-time-picker>
+<div class="promote-idea-popup-container" ng-click="$ctrl.closeSchedule()">
+  <div class="promote-idea-container flex-window awg-flex-col awg-flex-start awg-flex-align-stretch overflow"
+    ng-click="$event.stopPropagation()">
+    <div class="ideas-card-header"><span>Schedule Event</span></div>
+    <div class="promote-idea-form-container">
+      <form name="newIdea" ng-submit="$ctrl.submit()">
+        <div class="promote-idea-input-block">
+          <label class="sr-only" for="idea-title">Location</label>
+          <address-search address-name="$ctrl.addressName" address-text="$ctrl.addressText" address-link="$ctrl.addressLink"></address-search>
         </div>
-      </div>
-      <div class="date-time-pickers">
-        <label class="sr-only" for="idea-end-time">End date and time</label>
-        <div class="date-time">
-          <mdp-date-picker class="picker" mdp-placeholder="End date"
-          mdp-format="MM/DD/YYYY" ng-model="$ctrl.endTime"
-          ng-change="$ctrl.onEndDateTimeChange()"
-          mdp-open-on-click="true"></mdp-date-picker>
-          <mdp-time-picker class="picker" mdp-placeholder="End time"
-          mdp-format="hh:mm A" ng-model="$ctrl.endTime"
-          ng-change="$ctrl.onEndDateTimeChange()"
-          mdp-open-on-click="true"></mdp-time-picker>
+        <div class="date-time-pickers">
+          <label class="sr-only" for="idea-end-time">Start date and time</label>
+          <div class="date-time">
+            <mdp-date-picker class="picker" mdp-placeholder="Start date"
+            mdp-format="MM/DD/YYYY" ng-model="$ctrl.startTime"
+            ng-change="$ctrl.onStartDateTimeChange()"
+            mdp-open-on-click="true"></mdp-date-picker>
+            <mdp-time-picker class="picker" mdp-placeholder="Start time"
+            mdp-format="hh:mm A" ng-model="$ctrl.startTime"
+            ng-change="$ctrl.onStartDateTimeChange()"
+            mdp-open-on-click="true"></mdp-time-picker>
+          </div>
         </div>
-      </div>
-      <div ng-if="$ctrl.formWarning" class="awgl-form-warning awg-flex awg-flex-center">
-        <span>{{$ctrl.formWarning}}</span>
-      </div>
-      <div class="promote-idea-submit-container awg-flex awg-flex-center">
-        <div class="promote-idea-submit-button-container">
-          <button type="submit" class="awgl-button" name="promote-idea-submit">Schedule event</button>
+        <div class="date-time-pickers">
+          <label class="sr-only" for="idea-end-time">End date and time</label>
+          <div class="date-time">
+            <mdp-date-picker class="picker" mdp-placeholder="End date"
+            mdp-format="MM/DD/YYYY" ng-model="$ctrl.endTime"
+            ng-change="$ctrl.onEndDateTimeChange()"
+            mdp-open-on-click="true"></mdp-date-picker>
+            <mdp-time-picker class="picker" mdp-placeholder="End time"
+            mdp-format="hh:mm A" ng-model="$ctrl.endTime"
+            ng-change="$ctrl.onEndDateTimeChange()"
+            mdp-open-on-click="true"></mdp-time-picker>
+          </div>
         </div>
-      </div>
-    </form>
+        <div ng-if="$ctrl.formWarning" class="awgl-form-warning awg-flex awg-flex-center">
+          <span>{{$ctrl.formWarning}}</span>
+        </div>
+        <div class="promote-idea-submit-container awg-flex awg-flex-center">
+          <div class="promote-idea-submit-button-container">
+            <button type="submit" class="awgl-button" name="promote-idea-submit">Schedule event</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

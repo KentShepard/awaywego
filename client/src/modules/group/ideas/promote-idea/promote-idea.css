@@ -1,3 +1,22 @@
+.promote-idea-popup-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(203, 30%, 80%, .5);
+}
+
+.promote-idea-container {
+  background-color: var(--lt);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  padding: 10px;
+}
+
 .promote-idea-input-block {
   margin-bottom: 15px;
 }

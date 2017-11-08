@@ -107,7 +107,10 @@ PromoteIdeaController.$inject = ['EventService', 'UserService', '$stateParams', 
 
 const PromoteIdeaComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+    eventId: '<',
+    closeSchedule: '<'
+  },
   template: template,
   controller: PromoteIdeaController
 };
