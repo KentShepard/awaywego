@@ -27,7 +27,7 @@
 /* #### DARK FORM & BUTTON COLOR SCHEME - AWGD #### */
 /* Basic input field styling */
 .awgd-form-input {
-  padding: .8em 1em;
+  padding: .7em .9em;
   font-size: 1.1em;
   background-color: var(--m3tr5);
   border-color: var(--tr2);
@@ -130,7 +130,7 @@
 /* Light FORM & BUTTON COLOR SCHEME - AWGL #### */
 /* Basic input field styling */
 .awgl-form-input {
-  padding: .8em 1em;
+  padding: .7em .9em;
   font-size: 1.1em;
   background-color: var(--m3tr1);
   border-color: var(--dk3);
