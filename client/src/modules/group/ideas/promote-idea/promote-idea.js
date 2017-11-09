@@ -60,6 +60,9 @@ class PromoteIdeaController {
 
   submit() {
     if (this.validateForm()) {
+      if (this.addressLink === '') {
+        this.addressLink = `https://www.google.com/maps/search/?api=1&query=${encodeURI(this.addressText)}`;
+      }
       let promotedIdea = this.EventService.events[this.eventId];
       promotedIdea.startTime = this.startTime;
       promotedIdea.endTime = this.endTime;
