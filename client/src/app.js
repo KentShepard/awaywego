@@ -68,5 +68,10 @@ angular.module('app', [
   .service('MomentService', MomentService)
   .service('ImageSearchService', ImageSearchService)
   .service('ConfirmService', ConfirmService)
+  .component('app', AppComponent)
   .config(appRouting)
-  .component('app', AppComponent);
+  .config(['$mdThemingProvider', function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('blue');
+  }]);

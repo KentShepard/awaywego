@@ -94,6 +94,18 @@ html, body {
     display:none
 }
 
+/* Some overrides for Material-Design and MD-Pickers styles */
+.mdp-datepicker-date,
+.mdp-datepicker-year,
+.mdp-timepicker-time {
+  color: white !important;
+}
+
+.md-icon-button.md-raised.md-accent,
+.md-icon-button.md-raised.md-primary {
+  font-weight: bold;
+}
+
 :root {
 
   /*-- white base: #f6f4ee;*/
